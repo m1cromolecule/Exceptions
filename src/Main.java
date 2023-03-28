@@ -10,7 +10,6 @@ public class Main {
         builder.append(second);
         return builder.toString();
     }
-
     public static void main(String[] args) throws AuthenticationException, LoginException, OperatorException {
         Scanner scanner = new Scanner(System.in);
         int first = 0, second = 0;
@@ -32,6 +31,10 @@ public class Main {
         String password = scanner.nextLine();
 
         if (!users.get(login).equals(password)) {
+            throw new AuthenticationException();
+        }
+
+        if (!users.containsKey(login) | !users.containsValue(password)) {
             throw new AuthenticationException();
         }
 

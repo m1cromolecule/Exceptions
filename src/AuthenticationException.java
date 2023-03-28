@@ -1,5 +1,5 @@
-class AuthenticationException extends Exception {
+public class AuthenticationException extends Exception {
     public AuthenticationException() {
-        super("Неправильный пароль!");
+        super("проверкa аутентификации не пройдина");
     }
 }
